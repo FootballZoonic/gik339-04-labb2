@@ -12,8 +12,6 @@ server
     next();
   });
 
-server.listen(3000, () => console.log("Server running"));
-
 server.get("/users", (req, res) => {
   const db = new sqlite3.Database("./gik339-labb2.db");
   const sql = "SELECT * FROM users";
@@ -26,3 +24,5 @@ server.get("/users", (req, res) => {
     }
   });
 });
+
+server.listen(3000, () => console.log("Server running"));
